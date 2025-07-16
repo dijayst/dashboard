@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 
 import Link from "next/link";
@@ -7,8 +9,10 @@ import { MdAccountCircle } from "react-icons/md";
 import { FcDebt, FcServices } from "react-icons/fc";
 import { BarChart, CreditCard, Settings, User } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
+  const pathname = usePathname();
   const navItems = [
   { icon: <IoHomeSharp size={24} />, label: 'Dashboard', href: '/' },
     { icon: <GrTransaction size={24} />, label: 'Transactions', href: '/transactions' },  
@@ -43,11 +47,19 @@ const Sidebar = () => {
             </Link>
           </div>
       <nav className="flex flex-col gap-8">
-        {navItems.map((item, i) => (
-          <Link key={i} href={item.href} className="flex items-center gap-5 text-[#B1B1B1] hover:text-[#232323]">
+        {navItems.map((item, i) => {
+        const isActive = pathname === item.href;
+          return (
+
+          <Link key={i} href={item.href} 
+       
+          className={`flex items-center gap-5 ${
+                isActive ? 'text-[#232323] font-semibold' : 'text-[#B1B1B1] hover:text-[#232323]'
+              }`}
+          >
             {item.icon} {item.label}
           </Link>
-        ))}
+        )})}
       </nav>
     </aside>
     

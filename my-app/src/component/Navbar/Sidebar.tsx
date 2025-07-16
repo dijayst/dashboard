@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const Sidebar = () => {
   const navItems = [
-  { icon: <IoHomeSharp size={24} />, label: 'Dashboard', href: '/dashboard' },
+  { icon: <IoHomeSharp size={24} />, label: 'Dashboard', href: '/' },
     { icon: <GrTransaction size={24} />, label: 'Transactions', href: '/transactions' },  
     { icon: <MdAccountCircle size={24} />, label: 'Accounts', href: '/accounts' }, 
     { icon: <BarChart size={24} />, label: 'Investments', href: '#' },
@@ -18,9 +18,13 @@ const Sidebar = () => {
   { icon: <FcDebt size={24} />, label: 'Loans', href: '#' },
   { icon: <FcServices size={24} />, label: 'Services', href: '#' },
   { icon: <User size={24} />, label: 'My Privileges', href: '#' },
-  { icon: <Settings size={24} />, label: 'Settings', href: '#' },
+  { icon: <Settings size={24} />, label: 'Settings', href: '/Settings' },
 ];
+
+
+
   return (
+    
  
   <aside className="w-64 h-screen bg-white shadow px-10 flex flex-col gap-10">
       
@@ -46,6 +50,7 @@ const Sidebar = () => {
         ))}
       </nav>
     </aside>
+    
   );
 };
 

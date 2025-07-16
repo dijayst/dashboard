@@ -11,8 +11,8 @@ export default function Topbar() {
       {/* Right: Search, Icons, Avatar */}
       <div className="flex items-center gap-4">
         {/* Search Box */}
-        <div className="flex items-center bg-[#F5F7FA] px-4 py-2 rounded-lg gap-2 text-[#B1B1B1]">
-          <FiSearch className="text-lg" />
+        <div className="flex items-center bg-[#F5F7FA] px-4 py-2 rounded-xl gap-2 text-[#B1B1B1]">
+          <FiSearch className="text-lg text-[#718EBF]" />
           <input
             type="text"
             placeholder="Search for something"
@@ -22,18 +22,18 @@ export default function Topbar() {
 
         {/* Settings */}
         <button className="bg-[#F5F7FA] p-2 rounded-full">
-          <Settings className="text-[#343C6A] w-5 h-5" />
+          <Settings className="text-[#718EBF] w-5 h-5" />
         </button>
 
         {/* Notifications */}
         <button className="bg-[#F5F7FA] p-2 rounded-full">
-          <Bell className="text-[#343C6A] w-5 h-5" />
+          <Bell className="text-[#718EBF] w-5 h-5" />
         </button>
 
         {/* Profile Avatar */}
         <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#F5F7FA]">
           <Image
-            src="/image/topnavimg.png" // replace with your actual image path
+            src="/image/topnavimg.png" 
             alt="User Avatar"
             width={40}
             height={40}

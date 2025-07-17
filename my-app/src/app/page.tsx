@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <Dasgb />
-      <p>jug</p>
+    
       <div className="flex flex-col gap-10 px-6 py-10">
         <div className="flex gap-5 ">
           <div className="flex gap-5 flex-col  w-[33%] ">

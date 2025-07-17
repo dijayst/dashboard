@@ -1,45 +1,70 @@
 
-'use client';
+"use client";
+import Image from "next/image";
 
-import { useEffect, useState } from 'react';
+import { useCardStore } from "./useCardsStore";
 
-interface CardInfo {
-  id: string;
-  balance: string;
-  cardHolder: string;
-  validThru: string;
-  cardNumber: string;
-}
 
-export default function CardSummary() {
-  const [cards, setCards] = useState<CardInfo[]>([]);
 
-  useEffect(() => {
-    const fetchCards = async () => {
-      const response = await fetch('https://6877c66edba809d901f0de01.mockapi.io/card'); 
-      const result = await response.json();
-      setCards(result);
-    };
-
-    fetchCards();
-  }, []);
+const MyCards = () => {
+  const cards = useCardStore((state) => state.cards);
 
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
-      {cards.map((card) => (
-        <div
-          key={card.id}
-          className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-6 rounded-xl shadow-md"
-        >
-          <div className="text-sm">Balance</div>
-          <div className="text-3xl font-bold mb-4">{card.balance}</div>
-          <div className="text-sm">CARD HOLDER</div>
-          <div className="mb-2">{card.cardHolder}</div>
-          <div className="text-sm">VALID THRU</div>
-          <div>{card.validThru}</div>
-          <div className="mt-4 tracking-widest">{card.cardNumber}</div>
-        </div>
-      ))}
-    </div>
+    
+      
+     
+         <div >
+        {cards.map((card, i) =>
+         {
+    
+    return (
+          <div
+            key={i}
+            className={`rounded-xl p-6 w-full  ${card.bg} shadow-md`}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <div>
+                <p className="text-sm">Balance</p>
+                <p className="text-xl font-bold">{card.balance}</p>
+              </div>
+              
+            <div >
+                      <Image
+                        src="/image/Chip_Card.png" 
+                        alt="User Avatar"
+                        width={40}
+                        height={40}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+            </div>
+<div className="flex justify-between">
+            <div className="mb-4">
+              <p className="text-xs">CARD HOLDER</p>
+              <p className="font-semibold text-sm">{card.name}</p>
+            </div>
+
+            <div className="mb-4">
+              <p className="text-xs">VALID THRU</p>
+              <p className="font-semibold text-sm">{card.valid}</p>
+            </div>
+            </div>
+            <div className="flex justify-between">
+               <p className="mt-4 tracking-widest text-sm">{card.number}</p>
+<div className="flex"><div className="w-5 h-5 border-2 bg-gray-500 rounded-full ml-5"></div><div className="w-5 h-5 border-2 bg-gray-500 rounded-full"></div></div>
+</div>
+           
+          </div>
+        );
+  })}
+      </div>
+        
+       
+      
+
+     
+   
   );
-}
+};
+
+export default MyCards;

@@ -14,16 +14,18 @@ export default function Home() {
       <Dasgb />
       <div className="flex flex-col gap-10 px-6 py-10">
         <div className="flex gap-5 ">
-          <div className="flex gap-5 flex-col  w-[33%]">
-            <h1>My Cards</h1>
-            <div className="bg-[#000000] rounded-b-md">
+          <div className="flex gap-5 flex-col  w-[33%] ">
+            <h1 className="text-lg font-semibold text-[#343C6A]">My Cards</h1>
+            <div className="w-full rounded-b-md ">
               <CardSummary/>
             </div>
           </div>
           <div className="flex gap-5 flex-col   w-[33%]">
             <h1 className="items-end">See All</h1>
-            <div className="bg-[#DFEAF2] rounded-b-md">ghhffj</div>
-            <div></div>
+            <div className="w-full rounded-b-md bg-[#DFEAF2] ">
+              <CardSummary/>
+            </div>
+           
           </div>
           <div className="flex gap-5 flex-col  w-[33%]">
             <h1 className="text-lg font-semibold text-[#343C6A]">Recent Transaction</h1>

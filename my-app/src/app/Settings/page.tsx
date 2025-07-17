@@ -50,7 +50,7 @@ export default function page() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="flex gap-5 w-full flex-wrap md:flex-nowrap">
+              
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 className=" grid grid-cols-1 md:grid-cols-2 gap-6 "
@@ -123,7 +123,7 @@ export default function page() {
                     Save
                   </button>
                 </div>
-              </form></div>
+              </form>
             </div>
           )}
 
